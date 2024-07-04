@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3M Motorbike Spares</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'products/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>3M Motorbike Spares</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+                <button type="submit">Search</button>
+            </div>
+            <div class="cart-icon">
+                <a href="#"><img src="{% static 'products/cart.png' %}" alt="Cart"></a>
+            </div>
+        </div>
+    </header>
+    <div class="slider">
+        <img src="{% static 'products/slider.jpg' %}" alt="Slider Image">
+    </div>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
