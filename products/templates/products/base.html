@@ -11,19 +11,26 @@
             <h1>3M Motorbike Spares</h1>
             <div class="search-bar">
                 <input type="text" placeholder="Search for products...">
-                <button type="submit">Search</button>
-            </div>
-            <div class="cart-icon">
-                <a href="#"><img src="{% static 'products/cart.png' %}" alt="Cart"></a>
             </div>
         </div>
     </header>
     <div class="slider">
-        <img src="{% static 'products/img/slider.jpg' %}" alt="Slider Image">
+        <img src="{% static 'products/img/slider2.jpg' %}" alt="Slider Image">
     </div>
     <main>
         {% block content %}
         {% endblock %}
     </main>
+    <script>
+        // JavaScript for changing header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

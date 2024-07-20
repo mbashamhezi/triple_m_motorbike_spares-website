@@ -1,51 +1,78 @@
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s, height 0.3s;
+    height: 80px; /* Increased height for header */
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px; /* Adjusted padding */
+}
+
+header.scrolled {
+    background-color: #f4f4f4;
+    height: 80px; /* Ensure height stays consistent when scrolled */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Line below the header */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .search-bar input[type="text"] {
-    padding: 5px;
+    padding: 10px;
     font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 20px 0 0 20px;
 }
 
 .search-bar button {
-    padding: 5px 10px;
+    padding: 10px 20px;
     font-size: 16px;
     background-color: #555;
     color: #fff;
     border: none;
+    border-radius: 0 20px 20px 0;
     cursor: pointer;
 }
 
-.cart-icon img {
-    width: 32px;
-    height: 32px;
-}
-
 .slider {
-    width: 100%;
-    max-height: 400px;
+    width: calc(100% - 40px); /* Adjust width for left and right margins */
+    margin: 20px auto 0; /* Space on top and centered horizontally */
+    height: calc(100vh - 100px); /* Adjust height to fill the screen minus header height */
     overflow: hidden;
+    position: relative;
 }
 
 .slider img {
     width: 100%;
-    display: block;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 h1{
@@ -182,4 +209,88 @@ h1{
 .add-to-favorite {
     top: 80px; /* Adjusted margin from top to position below the cart button */
     right: 40px; /* Margin from right */
+}
+
+
+/* Media queries */
+/* @media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .filter-type, .filter-parts {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    .product-card {
+        max-width: 250px;
+    }
+
+    .add-to-cart, .add-to-favorite {
+        padding: 8px;
+    }
+} */
+
+
+
+
+
+
+
+
+
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .slider {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    header .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1em;
+    }
+
+    .slider {
+        height: 40vh;
+    }
 }

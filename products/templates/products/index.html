@@ -2,75 +2,69 @@
 {% load static %}
 
 {% block content %}
-<div class="slider">
-    <img src="{% static 'products/img/slider.jpg' %}" alt="Slider Image">
-</div>
 
-<h1>Top Rated Spare Parts</h1>
+<h1>Featured Products</h1>
 
 <div class="filters">
     <div class="filter-type">
         <h4>Filter by Type</h4>
         <div class="type-buttons">
-            <button>All</button>
-            <button>Boxer</button>
-            <button>Bajaj</button>
-            <button>TVS</button>
-            <button>Tuktuk</button>
+            <button data-type="all">All</button>
+            <button data-type="boxer">Boxer</button>
+            <button data-type="bajaj">Bajaj</button>
+            <button data-type="tvs">TVS</button>
         </div>
     </div>
-    <div class="filter-price">
-        <h4>Filter by Price</h4>
+    <div class="filter-parts">
+        <h4>Filter by Parts</h4>
         <div class="price-buttons">
-            <button>$0 - $100</button>
-            <button>$101 - $200</button>
-            <button>$201 - $300</button>
-            <button>$301 - $400</button>
-            <button>$401+</button>
+            <button data-category="engine">Engine Parts</button>
+            <button data-category="body">Body Parts</button>
+            <button data-category="lighting">Headlights & Lighting</button>
         </div>
     </div>
 </div>
 
 <main>
     <div class="products-grid">
-        <div class="product-card">
+        <div class="product-card" data-category="engine">
             <a href="{% url 'product_detail' 1 %}">
-                <img src="{% static 'products/img/Oil-Filter-Boxer-150.jpg' %}" alt="Product 1">
+                <img src="{% static 'products/img/engine/Oil-Filter-Boxer-150.jpg' %}" alt="Product 1">
                 <div class="product-info">
-                    <h3>Product Name 1</h3>
+                    <h3>Oil Filter Boxer-150</h3>
                     <p>$100</p>
                 </div>
             </a>
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-category="body">
             <a href="{% url 'product_detail' 2 %}">
-                <img src="{% static 'products/img/piston1.jpeg' %}" alt="Product 2">
+                <img src="{% static 'products/img/body/Accelerator-pipe.jpg' %}" alt="Product 2">
                 <div class="product-info">
-                    <h3>Product Name 2</h3>
+                    <h3>Accelerator Pipe</h3>
                     <p>$200</p>
                 </div>
             </a>
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-category="body">
             <a href="{% url 'product_detail' 3 %}">
-                <img src="{% static 'products/img/Brake-Shoe-Boxer-150.jpg' %}" alt="Product 3">
+                <img src="{% static 'products/img/body/Brake-Shoe-Boxer-150.jpg' %}" alt="Product 3">
                 <div class="product-info">
-                    <h3>Product Name 3</h3>
+                    <h3>Brake Shoe Boxer-150</h3>
                     <p>$300</p>
                 </div>
             </a>
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-category="body">
             <a href="{% url 'product_detail' 4 %}">
-                <img src="{% static 'products/img/Swing-Arm-Bush-300x300.jpg' %}" alt="Product 4">
+                <img src="{% static 'products/img/body/Swing-Arm-Bush.jpg' %}" alt="Product 4">
                 <div class="product-info">
-                    <h3>Product Name 4</h3>
+                    <h3>Swing Arm Bush</h3>
                     <p>$400</p>
                 </div>
             </a>
@@ -79,9 +73,9 @@
         </div>
     </div>
     <div class="products-grid">
-        <div class="product-card">
+        <div class="product-card" data-category="body">
             <a href="{% url 'product_detail' 1 %}">
-                <img src="{% static 'products/img/bike-part-2.jpg' %}" alt="Product 1">
+                <img src="{% static 'products/img/body/bike-part-2.jpg' %}" alt="Product 1">
                 <div class="product-info">
                     <h3>Drum Brake Rubber</h3>
                     <p>$100</p>
@@ -90,33 +84,33 @@
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-category="body">
             <a href="{% url 'product_detail' 2 %}">
-                <img src="{% static 'products/img/valves.jpeg' %}" alt="Product 2">
+                <img src="{% static 'products/img/body/Chain Adjuster.jpg' %}" alt="Product 2">
                 <div class="product-info">
-                    <h3>Bike Chain Adjuster</h3>
+                    <h3>Chain Adjuster</h3>
                     <p>$200</p>
                 </div>
             </a>
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-category="engine">
             <a href="{% url 'product_detail' 3 %}">
-                <img src="{% static 'products/img/piston.jpeg' %}" alt="Product 3">
+                <img src="{% static 'products/img/engine/Clutch-Boss.jpg' %}" alt="Product 3">
                 <div class="product-info">
-                    <h3>Product Name 3</h3>
+                    <h3>Clutch Boss</h3>
                     <p>$300</p>
                 </div>
             </a>
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-category="engine">
             <a href="{% url 'product_detail' 4 %}">
-                <img src="{% static 'products/img/Oil-Filter-Boxer-150.jpg' %}" alt="Product 4">
+                <img src="{% static 'products/img/engine/Chain-Tensioner.jpg' %}" alt="Product 4">
                 <div class="product-info">
-                    <h3>Product Name 4</h3>
+                    <h3>Chain Tensioner</h3>
                     <p>$400</p>
                 </div>
             </a>
@@ -124,5 +118,122 @@
             <button class="add-to-favorite">♡</button>
         </div>
     </div>
+    <div class="products-grid">
+        <div class="product-card" data-category="body">
+            <a href="{% url 'product_detail' 1 %}">
+                <img src="{% static 'products/img/body/Cup-cone-set.jpg' %}" alt="Product 1">
+                <div class="product-info">
+                    <h3>Cup Cone Set</h3>
+                    <p>$100</p>
+                </div>
+            </a>
+            <button class="add-to-cart">+</button>
+            <button class="add-to-favorite">♡</button>
+        </div>
+        <div class="product-card" data-category="engine">
+            <a href="{% url 'product_detail' 2 %}">
+                <img src="{% static 'products/img/engine/Piston.jpeg' %}" alt="Product 2">
+                <div class="product-info">
+                    <h3>Piston Boxer-150</h3>
+                    <p>$200</p>
+                </div>
+            </a>
+            <button class="add-to-cart">+</button>
+            <button class="add-to-favorite">♡</button>
+        </div>
+        <div class="product-card" data-category="engine">
+            <a href="{% url 'product_detail' 3 %}">
+                <img src="{% static 'products/img/engine/Clutch-Plate-Boxer-150.jpg' %}" alt="Product 3">
+                <div class="product-info">
+                    <h3>Clutch Plate Boxer-150</h3>
+                    <p>$300</p>
+                </div>
+            </a>
+            <button class="add-to-cart">+</button>
+            <button class="add-to-favorite">♡</button>
+        </div>
+        <div class="product-card" data-category="body">
+            <a href="{% url 'product_detail' 4 %}">
+                <img src="{% static 'products/img/body/Blinker-Assy.jpg' %}" alt="Product 4">
+                <div class="product-info">
+                    <h3>Blinker Assy</h3>
+                    <p>$400</p>
+                </div>
+            </a>
+            <button class="add-to-cart">+</button>
+            <button class="add-to-favorite">♡</button>
+        </div>
+    </div>
+
+    <div class="products-grid">
+        <div class="product-card" data-category="engine">
+            <a href="{% url 'product_detail' 1 %}">
+                <img src="{% static 'products/img/engine/Gear-shaft.jpg' %}" alt="Product 1">
+                <div class="product-info">
+                    <h3>Gear Shaft</h3>
+                    <p>$100</p>
+                </div>
+            </a>
+            <button class="add-to-cart">+</button>
+            <button class="add-to-favorite">♡</button>
+        </div>
+        <div class="product-card" data-category="body">
+            <a href="{% url 'product_detail' 2 %}">
+                <img src="{% static 'products/img/body/Bike-Lock-Kit.jpg' %}" alt="Product 2">
+                <div class="product-info">
+                    <h3>Bike Lock Kit</h3>
+                    <p>$200</p>
+                </div>
+            </a>
+            <button class="add-to-cart">+</button>
+            <button class="add-to-favorite">♡</button>
+        </div>
+        <div class="product-card" data-category="body">
+            <a href="{% url 'product_detail' 3 %}">
+                <img src="{% static 'products/img/body/Half-Axle.jpg' %}" alt="Product 3">
+                <div class="product-info">
+                    <h3>Half Axle</h3>
+                    <p>$300</p>
+                </div>
+            </a>
+            <button class="add-to-cart">+</button>
+            <button class="add-to-favorite">♡</button>
+        </div>
+        <div class="product-card" data-category="engine">
+            <a href="{% url 'product_detail' 4 %}">
+                <img src="{% static 'products/img/engine/Valve-Set.jpg' %}" alt="Product 4">
+                <div class="product-info">
+                    <h3>Valve Set</h3>
+                    <p>$400</p>
+                </div>
+            </a>
+            <button class="add-to-cart">+</button>
+            <button class="add-to-favorite">♡</button>
+        </div>
+    </div>
+
 </main>
+
 {% endblock %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const filterButtons = document.querySelectorAll('.price-buttons button');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                console.log(`Filtering category: ${category}`); // Debugging line
+
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
