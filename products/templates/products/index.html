@@ -27,7 +27,7 @@
 
 <main>
     <div class="products-grid">
-        <div class="product-card" data-category="engine">
+        <div class="product-card" data-type="boxer" data-category="engine">
             <a href="{% url 'product_detail' 1 %}">
                 <img src="{% static 'products/img/engine/Oil-Filter-Boxer-150.jpg' %}" alt="Product 1">
                 <div class="product-info">
@@ -38,7 +38,7 @@
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card" data-category="body">
+        <div class="product-card" data-type="tvs" data-category="body">
             <a href="{% url 'product_detail' 2 %}">
                 <img src="{% static 'products/img/body/Accelerator-pipe.jpg' %}" alt="Product 2">
                 <div class="product-info">
@@ -49,7 +49,7 @@
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card" data-category="body">
+        <div class="product-card" data-type="boxer" data-category="body">
             <a href="{% url 'product_detail' 3 %}">
                 <img src="{% static 'products/img/body/Brake-Shoe-Boxer-150.jpg' %}" alt="Product 3">
                 <div class="product-info">
@@ -60,7 +60,7 @@
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card" data-category="body">
+        <div class="product-card" data-type="bajaj" data-category="body">
             <a href="{% url 'product_detail' 4 %}">
                 <img src="{% static 'products/img/body/Swing-Arm-Bush.jpg' %}" alt="Product 4">
                 <div class="product-info">
@@ -73,7 +73,7 @@
         </div>
     </div>
     <div class="products-grid">
-        <div class="product-card" data-category="body">
+        <div class="product-card" data-type="boxer" data-category="body">
             <a href="{% url 'product_detail' 1 %}">
                 <img src="{% static 'products/img/body/bike-part-2.jpg' %}" alt="Product 1">
                 <div class="product-info">
@@ -95,7 +95,7 @@
             <button class="add-to-cart">+</button>
             <button class="add-to-favorite">♡</button>
         </div>
-        <div class="product-card" data-category="engine">
+        <div class="product-card" data-type="tvs" data-category="engine">
             <a href="{% url 'product_detail' 3 %}">
                 <img src="{% static 'products/img/engine/Clutch-Boss.jpg' %}" alt="Product 3">
                 <div class="product-info">
@@ -218,22 +218,45 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const filterButtons = document.querySelectorAll('.price-buttons button');
+        const typeButtons = document.querySelectorAll('.type-buttons button');
+        const categoryButtons = document.querySelectorAll('.price-buttons button');
         const productCards = document.querySelectorAll('.product-card');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const category = button.getAttribute('data-category');
-                console.log(`Filtering category: ${category}`); // Debugging line
+        let selectedType = 'all';
+        let selectedCategory = 'all';
 
-                productCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+        function filterProducts() {
+            productCards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                const cardCategory = card.getAttribute('data-category');
+
+                if ((selectedType === 'all' || cardType === selectedType) &&
+                    (selectedCategory === 'all' || cardCategory === selectedCategory)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        typeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                typeButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                selectedType = button.getAttribute('data-type');
+                filterProducts();
             });
         });
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                selectedCategory = button.getAttribute('data-category');
+                filterProducts();
+            });
+        });
+
+        filterProducts(); // Initial filter
     });
 </script>
