@@ -1,262 +1,206 @@
+
 {% extends 'products/base.html' %}
 {% load static %}
 
 {% block content %}
-
-<h1>Featured Products</h1>
-
-<div class="filters">
-    <div class="filter-type">
-        <h4>Filter by Type</h4>
-        <div class="type-buttons">
-            <button data-type="all">All</button>
-            <button data-type="boxer">Boxer</button>
-            <button data-type="bajaj">Bajaj</button>
-            <button data-type="tvs">TVS</button>
-        </div>
-    </div>
-    <div class="filter-parts">
-        <h4>Filter by Parts</h4>
-        <div class="price-buttons">
-            <button data-category="engine">Engine Parts</button>
-            <button data-category="body">Body Parts</button>
-            <button data-category="lighting">Headlights & Lighting</button>
-        </div>
-    </div>
-</div>
-
 <main>
-    <div class="products-grid">
-        <div class="product-card" data-type="boxer" data-category="engine">
-            <a href="{% url 'product_detail' 1 %}">
-                <img src="{% static 'products/img/engine/Oil-Filter-Boxer-150.jpg' %}" alt="Product 1">
-                <div class="product-info">
-                    <h3>Oil Filter Boxer-150</h3>
-                    <p>$100</p>
-                </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
+    <div class="container">
+        <!-- Slider Section -->
+        <div class="slider">
+            <img class="w-full max-h-500px" src="{% static 'products/img/slider.jpg' %}" alt="Slider Image">
         </div>
-        <div class="product-card" data-type="tvs" data-category="body">
-            <a href="{% url 'product_detail' 2 %}">
-                <img src="{% static 'products/img/body/Accelerator-pipe.jpg' %}" alt="Product 2">
-                <div class="product-info">
-                    <h3>Accelerator Pipe</h3>
-                    <p>$200</p>
+
+        <!-- Three Picture Section -->
+        <div class="cards">
+            <div class="card">
+                <img src="{% static 'products/img/left-banner.jpg' %}" alt="Product 1">
+                <div class="content">
+                    <button>Buy Now</button>
                 </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
+            </div>
+            <div class="card">
+                <img src="{% static 'products/img/center.jpg' %}" alt="Product 2">
+                <div class="content">
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'products/img/right-banner.jpg' %}" alt="Product 3">
+                <div class="content">
+                    <button>Buy Now</button>
+                </div>
+            </div>
         </div>
-        <div class="product-card" data-type="boxer" data-category="body">
-            <a href="{% url 'product_detail' 3 %}">
-                <img src="{% static 'products/img/body/Brake-Shoe-Boxer-150.jpg' %}" alt="Product 3">
+
+
+
+        <h2>Featured Products</h2>
+
+
+        <!-- Filters Section -->
+        <div class="filters">
+            <div class="filter-type">
+                <h4>Filter by Type</h4>
+                <div class="type-buttons">
+                    <button data-type="all">All</button>
+                    <button data-type="boxer">Boxer</button>
+                    <button data-type="bajaj">Bajaj</button>
+                    <button data-type="tvs">TVS</button>
+                </div>
+            </div>
+            <div class="filter-parts">
+                <h4>Filter by Parts</h4>
+                <div class="parts-buttons">
+                    <button data-category="engine">Engine Parts</button>
+                    <button data-category="body">Body Parts</button>
+                    <button data-category="lighting">Headlights & Lighting</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid Section -->
+        <div class="products-grid" id="data-container">
+
+            <!--=================================== Boxer Products ============================================-->
+
+            <div class="product-card" data-type="boxer" data-category="engine">
+                <img src="{% static 'products/img/engine/Oil-Filter-Boxer-150.jpg' %}" alt="Oil-filter">
                 <div class="product-info">
-                    <h3>Brake Shoe Boxer-150</h3>
+                    <h3>Oil-Filter-Boxer-150</h3>
+                    <p>Ksh 150</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="boxer" data-category="engine">
+                <img src="{% static 'products/img/engine/Valve-Set.jpg' %}" alt="Valve">
+                <div class="product-info">
+                    <h3>Valve-Set</h3>
+                    <p>Ksh 400</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="boxer" data-category="engine">
+                <img src="{% static 'products/img/engine/Piston.jpeg' %} " alt="Piston">
+                <div class="product-info">
+                    <h3>Piston</h3>
+                    <p>Ksh 1000</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="boxer" data-category="body">
+                <img src="{% static 'products/img/body/bike-part-2.jpg' %}" alt="Gear Leaver">
+                <div class="product-info">
+                    <h3>Blinker-Assy</h3>
                     <p>$300</p>
                 </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-type="bajaj" data-category="body">
-            <a href="{% url 'product_detail' 4 %}">
-                <img src="{% static 'products/img/body/Swing-Arm-Bush.jpg' %}" alt="Product 4">
-                <div class="product-info">
-                    <h3>Swing Arm Bush</h3>
-                    <p>$400</p>
-                </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-    </div>
-    <div class="products-grid">
-        <div class="product-card" data-type="boxer" data-category="body">
-            <a href="{% url 'product_detail' 1 %}">
-                <img src="{% static 'products/img/body/bike-part-2.jpg' %}" alt="Product 1">
-                <div class="product-info">
-                    <h3>Drum Brake Rubber</h3>
-                    <p>$100</p>
-                </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-category="body">
-            <a href="{% url 'product_detail' 2 %}">
-                <img src="{% static 'products/img/body/Chain Adjuster.jpg' %}" alt="Product 2">
-                <div class="product-info">
-                    <h3>Chain Adjuster</h3>
-                    <p>$200</p>
-                </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-type="tvs" data-category="engine">
-            <a href="{% url 'product_detail' 3 %}">
-                <img src="{% static 'products/img/engine/Clutch-Boss.jpg' %}" alt="Product 3">
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <!--=================================== Bajaj Products ================================================-->
+
+            <div class="product-card" data-type="bajaj" data-category="engine">
+                <img src="{% static 'products/img/engine/Clutch-Boss.jpg' %}" alt="Clutch-Boss">
                 <div class="product-info">
                     <h3>Clutch Boss</h3>
-                    <p>$300</p>
+                    <p>Ksh 1000</p>
                 </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-category="engine">
-            <a href="{% url 'product_detail' 4 %}">
-                <img src="{% static 'products/img/engine/Chain-Tensioner.jpg' %}" alt="Product 4">
-                <div class="product-info">
-                    <h3>Chain Tensioner</h3>
-                    <p>$400</p>
-                </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-    </div>
-    <div class="products-grid">
-        <div class="product-card" data-category="body">
-            <a href="{% url 'product_detail' 1 %}">
-                <img src="{% static 'products/img/body/Cup-cone-set.jpg' %}" alt="Product 1">
-                <div class="product-info">
-                    <h3>Cup Cone Set</h3>
-                    <p>$100</p>
-                </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-category="engine">
-            <a href="{% url 'product_detail' 2 %}">
-                <img src="{% static 'products/img/engine/Piston.jpeg' %}" alt="Product 2">
-                <div class="product-info">
-                    <h3>Piston Boxer-150</h3>
-                    <p>$200</p>
-                </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-category="engine">
-            <a href="{% url 'product_detail' 3 %}">
-                <img src="{% static 'products/img/engine/Clutch-Plate-Boxer-150.jpg' %}" alt="Product 3">
-                <div class="product-info">
-                    <h3>Clutch Plate Boxer-150</h3>
-                    <p>$300</p>
-                </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-category="body">
-            <a href="{% url 'product_detail' 4 %}">
-                <img src="{% static 'products/img/body/Blinker-Assy.jpg' %}" alt="Product 4">
-                <div class="product-info">
-                    <h3>Blinker Assy</h3>
-                    <p>$400</p>
-                </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-    </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
 
-    <div class="products-grid">
-        <div class="product-card" data-category="engine">
-            <a href="{% url 'product_detail' 1 %}">
-                <img src="{% static 'products/img/engine/Gear-shaft.jpg' %}" alt="Product 1">
+            <div class="product-card" data-type="bajaj" data-category="engine">
+                <img src="{% static 'products/img/engine/Gear-shaft.jpg' %}" alt="Gear-shaft">
                 <div class="product-info">
                     <h3>Gear Shaft</h3>
-                    <p>$100</p>
+                    <p>Ksh 1000</p>
                 </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-category="body">
-            <a href="{% url 'product_detail' 2 %}">
-                <img src="{% static 'products/img/body/Bike-Lock-Kit.jpg' %}" alt="Product 2">
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="bajaj" data-category="body">
+                <img src="{% static 'products/img/body/Accelerator-pipe.jpg' %}" alt="Accelerator-pipe">
                 <div class="product-info">
-                    <h3>Bike Lock Kit</h3>
-                    <p>$200</p>
+                    <h3>Accelerator Pipe</h3>
+                    <p>Ksh 200</p>
                 </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-category="body">
-            <a href="{% url 'product_detail' 3 %}">
-                <img src="{% static 'products/img/body/Half-Axle.jpg' %}" alt="Product 3">
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="bajaj" data-category="body">
+                <img src="{% static 'products/img/body/Swing-Arm-Bush.jpg' %}" alt="Swing-Arm-Bush">
                 <div class="product-info">
-                    <h3>Half Axle</h3>
-                    <p>$300</p>
+                    <h3>Swing Arm Bush</h3>
+                    <p>Ksh 200</p>
                 </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
-        </div>
-        <div class="product-card" data-category="engine">
-            <a href="{% url 'product_detail' 4 %}">
-                <img src="{% static 'products/img/engine/Valve-Set.jpg' %}" alt="Product 4">
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+
+            <!--=========================================== TVS Products =============================================-->
+
+            <div class="product-card" data-type="tvs" data-category="engine">
+                <img src="{% static 'products/img/engine/Clutch-Plate-Boxer-150.jpg' %}" alt="Clutch Plate">
                 <div class="product-info">
-                    <h3>Valve Set</h3>
-                    <p>$400</p>
+                    <h3>Clutch Plate</h3>
+                    <p>Ksh 500</p>
                 </div>
-            </a>
-            <button class="add-to-cart">+</button>
-            <button class="add-to-favorite">♡</button>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="tvs" data-category="engine">
+                <img src="{% static 'products/img/engine/Chain-Tensioner.jpg' %}" alt="Chain Tensioner">
+                <div class="product-info">
+                    <h3>Chain Tensioner</h3>
+                    <p>Ksh 500</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+             <div class="product-card" data-type="tvs" data-category="body">
+                <img src="{% static 'products/img/body/Brake-Shoe-Boxer-150.jpg' %}" alt=" Brake-Shoe-Boxer">
+                <div class="product-info">
+                    <h3> Brake Shoe</h3>
+                    <p>Ksh 200</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="tvs" data-category="body">
+                <img src="{% static 'products/img/body/Cup-cone-set.jpg' %}" alt="Cup-cone-set">
+                <div class="product-info">
+                    <h3>Cup cone set</h3>
+                    <p>Ksh 300</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="tvs" data-category="lighting">
+                <img src="{% static 'products/img/body/Blinker-Assy.jpg' %}" alt="Blinker-Assy">
+                <div class="product-info">
+                    <h3>Blinker-Assy</h3>
+                    <p>Ksh 300</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
         </div>
     </div>
-
 </main>
 
 {% endblock %}
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const typeButtons = document.querySelectorAll('.type-buttons button');
-        const categoryButtons = document.querySelectorAll('.price-buttons button');
-        const productCards = document.querySelectorAll('.product-card');
 
-        let selectedType = 'all';
-        let selectedCategory = 'all';
-
-        function filterProducts() {
-            productCards.forEach(card => {
-                const cardType = card.getAttribute('data-type');
-                const cardCategory = card.getAttribute('data-category');
-
-                if ((selectedType === 'all' || cardType === selectedType) &&
-                    (selectedCategory === 'all' || cardCategory === selectedCategory)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        typeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                typeButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                selectedType = button.getAttribute('data-type');
-                filterProducts();
-            });
-        });
-
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                selectedCategory = button.getAttribute('data-category');
-                filterProducts();
-            });
-        });
-
-        filterProducts(); // Initial filter
-    });
-</script>
