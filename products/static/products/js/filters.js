@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     typeButtons.forEach(button => {
         button.addEventListener('click', () => {
             selectedType = button.getAttribute('data-type');
+
+            // If the "All" button is clicked
+            if (selectedType === 'all') {
+                selectedCategory = null; // Reset category filter
+                categoryButtons.forEach(btn => btn.classList.remove('active')); // Remove active class from category buttons
+            }
+
             filterData();
         });
     });
@@ -14,6 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
             selectedCategory = button.getAttribute('data-category');
+
+            // If the "All" button is clicked
+            if (selectedCategory === 'all') {
+                selectedType = 'all'; // Reset type filter
+                typeButtons.forEach(btn => btn.classList.remove('active')); // Remove active class from type buttons
+            }
+
             filterData();
         });
     });
@@ -21,10 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterData() {
         const dataElements = document.querySelectorAll('#data-container .product-card');
         dataElements.forEach(element => {
-            element.style.display = 'none';
             const type = element.getAttribute('data-type');
             const category = element.getAttribute('data-category');
-            if ((selectedType === 'all' || type === selectedType) && (!selectedCategory || category === selectedCategory)) {
+            element.style.display = 'none';
+
+            // Display elements if "All" is selected or they match the selected type and category
+            if ((selectedType === 'all' || type === selectedType) && 
+                (selectedCategory === null || category === selectedCategory)) {
                 element.style.display = 'block';
             }
         });
