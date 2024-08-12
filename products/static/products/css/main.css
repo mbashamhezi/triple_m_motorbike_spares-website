@@ -1,0 +1,221 @@
+        /*======== Container to hold the entire content with equal left and right margins ===========*/
+
+        .container {
+            width: 97%;
+            margin: 0 auto; /* Center the container */
+        }
+
+
+         /*================== Slider CSS =================*/
+
+        .slider {
+            width: calc(100% - 40px); /* Adjust width for left and right margins */
+            margin: 20px auto; /* Space on top and centered horizontally */
+            height: calc(100vh - 100px); /* Adjust height to fill the screen minus header height */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider img {
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            border-radius: 8px;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .max-h-\[500px\] {
+            height: 500px;
+        }
+
+        img {
+            height: 80%;
+            max-width: 100%;
+        }
+
+
+        /*============================ Three picture CSS ==========================*/
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px; 
+        }
+
+        .card {
+            position: relative;
+            width: 30%; 
+            height: 200px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card .content {
+            padding: 15px;
+        }
+
+        .card button {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background-color: #fa6704;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #fa6704;
+            color: white;
+        }
+
+        h2{
+            color: #fa6704;
+            text-align: center;
+            padding-bottom: 5px;
+            top: 300px;
+        }
+
+       
+        /*======================== Filter CSS ======================*/
+
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            padding-bottom: 1px;
+        }
+
+        .filter-type, .filter-parts {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-type h4, .filter-parts h4 {
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .type-buttons, .parts-buttons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .type-buttons button, .parts-buttons button {
+            padding: 10px;
+            margin-right: 5px;
+            border: 1px solid #fa6704;
+            background-color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            border-radius: 12px;
+            color: #fa6704;
+        }
+
+        .type-buttons button:hover, .parts-buttons button:hover {
+            background-color: #fa6704;
+            border-color: #fa6704; 
+            color: #fff;
+        }
+
+        /*================ Product Card CSS ========================*/
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: #fff;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            height: 260px;
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card:hover .add-to-cart, 
+        .product-card:hover .add-to-favorite {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .product-card p {
+            font-size: 12px;
+            margin: 0;
+            color: #333;
+            background-color: #fa6704; 
+            border-radius: 100%; 
+            padding: 5px 10px; 
+        }
+
+        .add-to-cart,
+        .add-to-favorite {
+            position: absolute;
+            background-color: #fa6704;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .add-to-cart {
+            top: 20px; 
+            right: 40px; 
+        }
+
+        .add-to-favorite {
+            top: 80px; 
+            right: 40px;
+        }

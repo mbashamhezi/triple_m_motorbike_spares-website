@@ -32,10 +32,7 @@
             </div>
         </div>
 
-
-
         <h2>Featured Products</h2>
-
 
         <!-- Filters Section -->
         <div class="filters">
@@ -53,6 +50,7 @@
                 <div class="parts-buttons">
                     <button data-category="engine">Engine Parts</button>
                     <button data-category="body">Body Parts</button>
+                    <button data-category="wheel">2 Wheel Parts</button>
                     <button data-category="lighting">Headlights & Lighting</button>
                 </div>
             </div>
@@ -94,10 +92,30 @@
             </div>
 
             <div class="product-card" data-type="boxer" data-category="body">
-                <img src="{% static 'products/img/body/bike-part-2.jpg' %}" alt="Gear Leaver">
+                <img src="{% static 'products/img/body/Main-Stand.jpg' %}" alt="Gear Leaver">
                 <div class="product-info">
-                    <h3>Blinker-Assy</h3>
+                    <h3>Main-Stand</h3>
                     <p>$300</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="boxer" data-category="wheel">
+                <img src="{% static 'products/img/wheel/Drum-Rubber.jpg' %}" alt=" Brake-Shoe-Boxer">
+                <div class="product-info">
+                    <h3>Drum Rubber</h3>
+                    <p>Ksh 200</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
+            <div class="product-card" data-type="boxer" data-category="wheel">
+                <img src="{% static 'products/img/wheel/Half-Axle.jpg' %}" alt=" Brake-Shoe-Boxer">
+                <div class="product-info">
+                    <h3>Half Axle</h3>
+                    <p>Ksh 200</p>
                 </div>
                 <button class="add-to-cart">+</button>
                 <button class="add-to-favorite">♡</button>
@@ -116,7 +134,7 @@
             </div>
 
             <div class="product-card" data-type="bajaj" data-category="engine">
-                <img src="{% static 'products/img/engine/Gear-shaft.jpg' %}" alt="Gear-shaft">
+                <img src="{% static 'products/img/engine/Gear-Shaft.jpg' %}" alt="Gear-shaft">
                 <div class="product-info">
                     <h3>Gear Shaft</h3>
                     <p>Ksh 1000</p>
@@ -126,7 +144,7 @@
             </div>
 
             <div class="product-card" data-type="bajaj" data-category="body">
-                <img src="{% static 'products/img/body/Accelerator-pipe.jpg' %}" alt="Accelerator-pipe">
+                <img src="{% static 'products/img/body/Accelerator-Pipe.jpg' %}" alt="Accelerator-pipe">
                 <div class="product-info">
                     <h3>Accelerator Pipe</h3>
                     <p>Ksh 200</p>
@@ -145,6 +163,15 @@
                 <button class="add-to-favorite">♡</button>
             </div>
 
+            <div class="product-card" data-type="bajaj" data-category="wheel">
+                <img src="{% static 'products/img/wheel/Brake-Rod.jpg' %}" alt="Brake Rod">
+                <div class="product-info">
+                    <h3>Brake Rod</h3>
+                    <p>Ksh 200</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
 
             <!--=========================================== TVS Products =============================================-->
 
@@ -168,8 +195,8 @@
                 <button class="add-to-favorite">♡</button>
             </div>
 
-             <div class="product-card" data-type="tvs" data-category="body">
-                <img src="{% static 'products/img/body/Brake-Shoe-Boxer-150.jpg' %}" alt=" Brake-Shoe-Boxer">
+             <div class="product-card" data-type="tvs" data-category="wheel">
+                <img src="{% static 'products/img/wheel/Brake-Shoe-Boxer-150.jpg' %}" alt=" Brake-Shoe-Boxer">
                 <div class="product-info">
                     <h3> Brake Shoe</h3>
                     <p>Ksh 200</p>
@@ -179,7 +206,7 @@
             </div>
 
             <div class="product-card" data-type="tvs" data-category="body">
-                <img src="{% static 'products/img/body/Cup-cone-set.jpg' %}" alt="Cup-cone-set">
+                <img src="{% static 'products/img/body/Cup-Cone-Set.jpg' %}" alt="Cup-cone-set">
                 <div class="product-info">
                     <h3>Cup cone set</h3>
                     <p>Ksh 300</p>
@@ -189,7 +216,7 @@
             </div>
 
             <div class="product-card" data-type="tvs" data-category="lighting">
-                <img src="{% static 'products/img/body/Blinker-Assy.jpg' %}" alt="Blinker-Assy">
+                <img src="{% static 'products/img/lighting/Blinker-Assy.jpg' %}" alt="Blinker-Assy">
                 <div class="product-info">
                     <h3>Blinker-Assy</h3>
                     <p>Ksh 300</p>
@@ -197,6 +224,17 @@
                 <button class="add-to-cart">+</button>
                 <button class="add-to-favorite">♡</button>
             </div>
+
+            <div class="product-card" data-type="tvs" data-category="wheel">
+                <img src="{% static 'products/img/wheel/Speedometer -Worm-Set.jpg' %}" alt=" Brake-Shoe-Boxer">
+                <div class="product-info">
+                    <h3>Speedometer Worm Set</h3>
+                    <p>Ksh 200</p>
+                </div>
+                <button class="add-to-cart">+</button>
+                <button class="add-to-favorite">♡</button>
+            </div>
+
         </div>
     </div>
 </main>
